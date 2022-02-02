@@ -42,10 +42,14 @@
             <tr>
                 <td th:text="${job.id}"></td>
                 <td th:text="${job.name}"></td>
-                <td th:text="${job.employer}"></td>
-                <td th:text="${job.location}"></td>
-                <td th:text="${job.positionType}"></td>
-                <td th:text="${job.coreCompetency}"></td>
+                <td><a th:href="@{/list/jobs(column='employer', value=${job.employer})}"
+                       th:text="${job.employer}"></a></td>
+                <td><a th:href="@{/list/jobs(column='location', value=${job.location})}"
+                       th:text="${job.employer}"></a></td>
+                <td><a th:href="@{/list/jobs(column='positionType', value=${job.positionType})}"
+                       th:text="${job.positionType}"></a></td>
+                <td><a th:href="@{/list/jobs(column='coreCompetency', value=${job.coreCompetency})}"
+                       th:text="${job.coreCompetency}"></a></td>
             </tr>
         </th:block>
     </table>
