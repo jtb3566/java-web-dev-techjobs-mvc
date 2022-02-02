@@ -31,13 +31,34 @@
             <input type="text" name="searchTerm" id="searchTerm" />
         </p>
 
-        <input type="submit" value="Search" />
+        <input type="submit" value="search" />
     </form>
 
     <hr />
 
-    <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
+    <!-- Loop over the search results to display all job fields. -->
+    <table class="job-listing">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Position Type</th>
+            <th>Skill</th>
+        </tr>
+        </thead>
+        <th:block th:each="job : ${jobs}">
+            <tr>
+                <td th:text="${job.id}"></td>
+                <td th:text="${job.name}"></td>
+                <td th:text="${job.employer}"></td>
+                <td th:text="${job.location}"></td>
+                <td th:text="${job.positionType}"></td>
+                <td th:text="${job.coreCompetency}"></td>
+            </tr>
+        </th:block>
+    </table>
 </div>
 
 </body>
